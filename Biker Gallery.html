@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Biker Gallery </title>
+<style>
+body {
+  font-family: Arial;
+  background: #0f172a;
+  color: white;
+  margin: 0; /* remove default margin */
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #1e293b;
+  padding: 15px;
+  text-align: center;
+  z-index: 1000;
+  font-size: 22px;
+
+}
+main {
+  padding-top: calc(60px + 2em); /* depends on header size */
+}
+
+main {
+  margin-top: 120px; /* increase this so image isn’t hidden */
+  text-align: center;
+}
+
+.card {
+  background: #1e293b;
+  padding: 20px;
+  margin: 40px auto;
+  width: 320px;
+  border-radius: 10px;
+}
+
+button {
+  background: #22c55e;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+img {
+  width: 100%;
+  border-radius: 10px;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🚲 Biker Gallery</h1>
+  <p>Premium single bike – simple & smart</p>
+</header>
+
+<main>
+  <div class="card">
+    <img src= "https://images.jdmagicbox.com/comp/salem/l8/0427px427.x427.240225110307.m2l8/catalogue/h87e8vqkso71v4f-spexuh8ut0.jpg">
+    <h2>150cc Bike</h2>
+    <p>₹ 22/hour • ₹550/day</p>
+    <a href="/book"><button>Book Now</button></a>
+  </div>
+</main>
+
+</body>
+</html>
+<html><head><title>Book Bike</title><style>body {font-family: Arial;background: #020617;color: white;text-align: center;}
+input {display: block;margin: 10px auto;padding: 10px;width: 250px;}
+button {background: #22c55e;border: none;padding: 10px;width: 270px;cursor: pointer;}
+</style>
+</head>
+<body>
+<h2>Book Your Ride</h2>
+<form method="POST" action="/book">
+    <input name="name" placeholder="Your Name" required>
+    <input name="date" type="date" required>
+    <input name="hours" type="number" placeholder="Hours" required>
+    <button type="submit">Confirm Booking</button>
+</form>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Admin</title>
+        <style>
+        body {font-family: Arial;background: #020617;color: white;text-align: center;}
+        table {margin: auto;border-collapse: collapse;}
+        td, th {border: 1px solid #22c55e;padding: 10px;}</style></head><body>
+<h2>📊 Admin – Bookings</h2>
+<table>
+    <tr><th>ID</th>
+        <th>Name</th>
+        <th>Date</th>
+        <th>Hours</th>
+    </tr>
+</table>
