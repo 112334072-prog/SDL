@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Book Bike</title>
+<style>
+body {
+  font-family: Arial;
+  background: #020617;
+  color: white;
+  text-align: center;
+}
+input {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  width: 250px;
+}
+button {
+  background: #22c55e;
+  border: none;
+  padding: 10px;
+  width: 270px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<h2>Book Your Ride</h2>
+
+<form onsubmit="confirmBooking(event)">
+  <input name="name" placeholder="Your Name" required>
+  <input name="date" type="date" required>
+  <input name="hours" type="number" placeholder="Hours" required>
+  <button type="submit">Confirm Booking</button>
+</form>
+
+<script>
+function confirmBooking(event) {
+  event.preventDefault();
+  alert("✅ Booking Confirmed!");
+  window.location.href = "index.html";
+}
+</script>
+
+</body>
+</html>

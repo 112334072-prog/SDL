@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>User Login</title>
+<style>
+body {
+  font-family: Arial;
+  background: #020617;
+  color: white;
+  text-align: center;
+}
+input {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  width: 250px;
+}
+button {
+  background: #22c55e;
+  border: none;
+  padding: 10px;
+  width: 270px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<h2> User Login</h2>
+
+<form onsubmit="loginUser(event)">
+  <input type="text" id="username" placeholder="Username" required>
+  <input type="password" id="password" placeholder="Password" required>
+  <button type="submit">Login</button>
+</form>
+
+<script>
+function loginUser(event) {
+  event.preventDefault();
+
+  const user = document.getElementById("username").value;
+  const pass = document.getElementById("password").value;
+
+
+  if(user === "Nithish" && pass === "1234") {
+    alert("Login Successful!");
+    window.location.href = "index.html";
+  }
+  else if(user === "padmasaran" && pass === "1608") {
+    alert("Login Successful!");
+    window.location.href = "index.html";
+  } else {
+    alert("Invalid Username or Password");
+  }
+}
+</script>
+
+</body>
+</html>
