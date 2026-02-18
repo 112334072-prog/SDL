@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document Verification — KYC Portal</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Mono:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="stylesr.css" />
+</head>
+<body>
+
+  <div class="wrapper">
+
+<div class="portal-header">
+  <h1>Register</h1>
+</div>
+
+
+    <div class="card">
+
+
+      <p class="section-label">Personal Information</p>
+
+      <div class="form-row">
+
+        <div class="form-group full">
+          <label for="fullName">FULL NAME (AUTO-FILLED)</label>
+          <input
+            type="text"
+            id="fullName"
+            placeholder="Extracted from documents"
+            readonly
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="dob">DATE OF BIRTH (AUTO-FILLED)</label>
+          <input type="date" id="dob" readonly />
+        </div>
+
+        <div class="form-group">
+          <label for="email">EMAIL ADDRESS</label>
+          <input type="email" id="email" placeholder="you@example.com" required />
+        </div>
+
+        <div class="form-group full">
+          <label for="phone">PHONE NUMBER</label>
+          <input type="tel" id="phone" placeholder="+91 00000 00000" required />
+        </div>
+
+      </div>
+
+      <p class="section-label" style="margin-top: 4px;">
+        Document Upload &amp; Scan
+      </p>
+
+      <div class="upload-grid">
+
+        
+        <div>
+          <label>PAN CARD</label>
+          <div class="upload-zone" id="panZone">
+            <input type="file" id="panFile" accept=".jpg,.jpeg,.png" />
+            <img class="preview-img" id="panPreview" alt="PAN card preview" />
+            <div class="preview-overlay">Click to change</div>
+            <div class="upload-inner">
+              <span class="upload-icon">🆔</span>
+              <span class="upload-label-text">Upload PAN Card</span>
+              <span class="upload-hint">JPG / PNG</span>
+            </div>
+          </div>
+
+          <div class="proc-chip" id="panChip">
+            <div class="spin"></div>
+            <span id="panChipText">Scanning document…</span>
+          </div>
+
+          <div class="result-card" id="panResult"></div>
+        </div>
+
+
+        <div>
+          <label>DRIVING LICENSE</label>
+          <div class="upload-zone" id="dlZone">
+            <input type="file" id="dlFile" accept=".jpg,.jpeg,.png" />
+            <img class="preview-img" id="dlPreview" alt="Driving license preview" />
+            <div class="preview-overlay">Click to change</div>
+            <div class="upload-inner">
+              <span class="upload-icon">🚗</span>
+              <span class="upload-label-text">Upload Driving License</span>
+              <span class="upload-hint">JPG / PNG</span>
+            </div>
+          </div>
+
+          <div class="proc-chip" id="dlChip">
+            <div class="spin"></div>
+            <span id="dlChipText">Scanning document…</span>
+          </div>
+
+          <div class="result-card" id="dlResult"></div>
+        </div>
+
+      </div>
+
+
+      <div id="verificationBanner"></div>
+
+
+      <button class="submit-btn" id="submitBtn" disabled>
+        Complete Registration
+      </button>
+
+    </div>
+  </div>
+
+  <div id="successOverlay">
+    <div class="success-box">
+      <span class="emoji">🎉</span>
+      <h2>Registration Successful!</h2>
+      <p>
+        Your documents have been verified and your
+        account has been created successfully.
+      </p>
+    </div>
+  </div>
+
+
+  <script src="scanner.js"></script>
+
+</body>
+</html>
