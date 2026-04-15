@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Login — Biker Gallery</title>
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+<div class="page-bg"></div>
+
+<!--
+  👤 Floating Admin button — top-right corner.
+  Clicking it validates the form, SHA-256 hashes the password,
+  sets login_authentication = 'admin', then submits to php/login.php
+  which checks the admin_login table and redirects to admin.php.
+-->
+<button class="admin-float-btn" type="button"
+        title="Admin Panel Login" onclick="adminLogin()">👤</button>
+
+<div class="login-wrap">
+  <div class="login-box">
+    <h2>Welcome Back</h2>
+    <div class="err" id="errMsg"></div>
+
+    <form name="loginForm" action="php/login.php" method="POST" onsubmit="doLogin(event)">
+
+      <div class="form-group">
+        <label>Username</label>
+        <input type="text" name="username" id="unameField"
+               placeholder="Enter username" maxlength="50" autocomplete="off" required>
+        <div class="field-err" id="errUname"></div>
+      </div>
+
+      <div class="form-group">
+        <label>Password</label>
+        <div class="pw-wrap">
+          <input type="password" id="pwField"
+                 placeholder="Enter password" maxlength="20" autocomplete="off" required>
+          <button class="pw-toggle" type="button" onclick="togglePw()" id="pwBtn">Show</button>
+        </div>
+        <div class="field-err" id="errPwd"></div>
+      </div>
+
+      <!-- hidden fields carry the SHA-256 hash — visible pw field is never modified -->
+      <input type="hidden" name="password" id="hiddenPw" value="">
+      <input type="hidden" name="login_authentication" id="hiddenAuth" value="1">
+
+      <button type="submit" class="btn btn-login">Login →</button>
+
+    </form>
+
+    <div class="login-footer">
+      New here? <a href="register.html">Register</a>
+    </div>
+  </div>
+</div>
+
+
+  <script src="js/login.js"></script>
+</body>
+</html>

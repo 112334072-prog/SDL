@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Menu — Biker Gallery</title>
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/menu.css">
+
+<style>
+.avail-chip.unavail-chip { background:rgba(255,83,112,.18); border-color:rgba(255,83,112,.4); color:#ff7d93; }
+.unavail-dot { background:#ff5370 !important; box-shadow:0 0 6px #ff5370 !important; }
+</style>
+</head>
+<body>
+<div class="page-bg"></div>
+
+<nav>
+  <a class="nav-brand" href="home.html">BikerGallery</a>
+  <ul class="nav-links">
+    <li><a href="home.html">Home</a></li>
+    <li><a href="menu.html" class="active">Menu</a></li>
+    <li><a href="book.html">Book</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="login.html" class="btn-nav">Logout</a></li>
+  </ul>
+</nav>
+
+<div class="menu-wrap">
+  <div class="menu-header">
+    <h1>Our <span>Bike Fleet</span></h1>
+    <p>Choose your perfect ride — all bikes fully serviced &amp; ready to go</p>
+  </div>
+
+  <div class="filter-row">
+    <button class="filter-btn active" onclick="filter('all',this)">All Bikes</button>
+    <button class="filter-btn" onclick="filter('125cc',this)">125cc</button>
+    <button class="filter-btn" onclick="filter('200cc',this)">200cc</button>
+    <button class="filter-btn" onclick="filter('premium',this)">Premium</button>
+  </div>
+
+  <div class="bikes-grid" id="grid">
+
+    <!-- ════════════════════ 125cc BIKES ════════════════════ -->
+    <div class="category-heading" data-cat-head="125cc"><span>125cc</span> Bikes</div>
+
+    <!-- Honda SP 125 -->
+    <div class="bike-card" data-cat="125cc">
+      <div class="bike-img">
+        <img src="img/honda_sp125.jpg" alt="Honda SP 125">
+        <div class="avail-chip"><span class="avail-dot"></span>Available</div>
+        <div class="cat-chip">125cc</div>
+      </div>
+      <div class="bike-body">
+        <div class="bike-name">Honda SP 125</div>
+        <div class="bike-specs">
+          <div class="spec-item"><div class="spec-label">Engine</div><div class="spec-val">125cc</div></div>
+          <div class="spec-item"><div class="spec-label">Mileage</div><div class="spec-val">65 kmpl</div></div>
+          <div class="spec-item"><div class="spec-label">Gearbox</div><div class="spec-val">Manual</div></div>
+          <div class="spec-item"><div class="spec-label">Type</div><div class="spec-val">Commuter</div></div>
+        </div>
+        <div class="bike-price-row">
+          <span class="price-main">₹20</span>
+          <span class="price-unit">/hr</span>
+          <span class="price-day">• ₹480/day</span>
+        </div>
+        <a href="book.html?bike=Honda+SP+125&rate=20" class="btn btn-primary">Book Now →</a>
+      </div>
+    </div>
+
+    <!-- Hero Xtreme 125R -->
+    <div class="bike-card" data-cat="125cc">
+      <div class="bike-img">
+        <img src="img/hero_xtreme125r.jpg" alt="Hero Xtreme 125R">
+        <div class="avail-chip"><span class="avail-dot"></span>Available</div>
+        <div class="cat-chip">125cc</div>
+      </div>
+      <div class="bike-body">
+        <div class="bike-name">Hero Xtreme 125R</div>
+        <div class="bike-specs">
+          <div class="spec-item"><div class="spec-label">Engine</div><div class="spec-val">125cc</div></div>
+          <div class="spec-item"><div class="spec-label">Mileage</div><div class="spec-val">60 kmpl</div></div>
+          <div class="spec-item"><div class="spec-label">Gearbox</div><div class="spec-val">Manual</div></div>
+          <div class="spec-item"><div class="spec-label">Type</div><div class="spec-val">Sports</div></div>
+        </div>
+        <div class="bike-price-row">
+          <span class="price-main">₹22</span>
+          <span class="price-unit">/hr</span>
+          <span class="price-day">• ₹520/day</span>
+        </div>
+        <a href="book.html?bike=Hero+Xtreme+125R&rate=22" class="btn btn-primary">Book Now →</a>
+      </div>
+    </div>
+
+    <!-- Bajaj Pulsar NS125 -->
+    <div class="bike-card" data-cat="125cc">
+      <div class="bike-img">
+        <img src="img/bajaj_pulsar_ns125.jpg" alt="Bajaj Pulsar NS125">
+        <div class="avail-chip"><span class="avail-dot"></span>Available</div>
+        <div class="cat-chip">125cc</div>
+      </div>
+      <div class="bike-body">
+        <div class="bike-name">Bajaj Pulsar NS125</div>
+        <div class="bike-specs">
+          <div class="spec-item"><div class="spec-label">Engine</div><div class="spec-val">125cc</div></div>
+          <div class="spec-item"><div class="spec-label">Mileage</div><div class="spec-val">55 kmpl</div></div>
+          <div class="spec-item"><div class="spec-label">Gearbox</div><div class="spec-val">Manual</div></div>
+          <div class="spec-item"><div class="spec-label">Type</div><div class="spec-val">Sports</div></div>
+        </div>
+        <div class="bike-price-row">
+          <span class="price-main">₹22</span>
+          <span class="price-unit">/hr</span>
+          <span class="price-day">• ₹520/day</span>
+        </div>
+        <a href="book.html?bike=Bajaj+Pulsar+NS125&rate=22" class="btn btn-primary">Book Now →</a>
+      </div>
+    </div>
+
+    <!-- Honda Activa 125 -->
+    <div class="bike-card" data-cat="125cc">
+      <div class="bike-img">
+        <img src="img/honda_activa125.jpg" alt="Honda Activa 125">
+        <div class="avail-chip"><span class="avail-dot"></span>Available</div>
+        <div class="cat-chip">125cc</div>
+      </div>
+      <div class="bike-body">
+        <div class="bike-name">Honda Activa 125</div>
+        <div class="bike-specs">
+          <div class="spec-item"><div class="spec-label">Engine</div><div class="spec-val">125cc</div></div>
+          <div class="spec-item"><div class="spec-label">Mileage</div><div class="spec-val">60 kmpl</div></div>
+          <div class="spec-item"><div class="spec-label">Gearbox</div><div class="spec-val">Automatic</div></div>
+          <div class="spec-item"><div class="spec-label">Type</div><div class="spec-val">Scooter</div></div>
+        </div>
+        <div class="bike-price-row">
+          <span class="price-main">₹18</span>
+          <span class="price-unit">/hr</span>
+          <span class="price-day">• ₹440/day</span>
+        </div>
+        <a href="book.html?bike=Honda+Activa+125&rate=18" class="btn btn-primary">Book Now →</a>
+      </div>
+    </div>
+
+    <!-- ════════════════════ 200cc BIKES ════════════════════ -->
+    <div class="category-heading" data-cat-head="200cc"><span>200cc</span> Bikes</div>
+
+    <!-- Bajaj Pulsar NS200 -->
+    <div class="bike-card" data-cat="200cc">
+      <div class="bike-img">
+        <img src="img/bajaj_pulsar_ns200.jpg" alt="Bajaj Pulsar NS200">
+        <div class="avail-chip"><span class="avail-dot"></span>Available</div>
+        <div class="cat-chip">200cc</div>
+      </div>
+      <div class="bike-body">
+        <div class="bike-name">Bajaj Pulsar NS200</div>
+        <div class="bike-specs">
+          <div class="spec-item"><div class="spec-label">Engine</div><div class="spec-val">200cc</div></div>
+          <div class="spec-item"><div class="spec-label">Mileage</div><div class="spec-val">40 kmpl</div></div>
+          <div class="spec-item"><div class="spec-label">Gearbox</div><div class="spec-val">Manual</div></div>
+          <div class="spec-item"><div class="spec-label">Type</div><div class="spec-val">Sports</div></div>
+        </div>
+        <div class="bike-price-row">
+          <span class="price-main">₹35</span>
+          <span class="price-unit">/hr</span>
+          <span class="price-day">• ₹800/day</span>
+        </div>
+        <a href="book.html?bike=Bajaj+Pulsar+NS200&rate=35" class="btn btn-primary">Book Now →</a>
+      </div>
+    </div>
+
+    <!-- TVS Apache RTR 200 4V -->
+    <div class="bike-card" data-cat="200cc">
+      <div class="bike-img">
+        <img src="img/tvs_apache_rtr200.jpg" alt="TVS Apache RTR 200 4V">
+        <div class="avail-chip"><span class="avail-dot"></span>Available</div>
+        <div class="cat-chip">200cc</div>
+      </div>
+      <div class="bike-body">
+        <div class="bike-name">TVS Apache RTR 200 4V</div>
+        <div class="bike-specs">
+          <div class="spec-item"><div class="spec-label">Engine</div><div class="spec-val">197cc</div></div>
+          <div class="spec-item"><div class="spec-label">Mileage</div><div class="spec-val">35 kmpl</div></div>
+          <div class="spec-item"><div class="spec-label">Gearbox</div><div class="spec-val">Manual</div></div>
+          <div class="spec-item"><div class="spec-label">Type</div><div class="spec-val">Sports</div></div>
+        </div>
+        <div class="bike-price-row">
+          <span class="price-main">₹38</span>
+          <span class="price-unit">/hr</span>
+          <span class="price-day">• ₹880/day</span>
+        </div>
+        <a href="book.html?bike=TVS+Apache+RTR+200+4V&rate=38" class="btn btn-primary">Book Now →</a>
+      </div>
+    </div>
+
+    <!-- Yamaha MT-15 -->
+    <div class="bike-card" data-cat="200cc">
+      <div class="bike-img">
+        <img src="img/yamaha_mt15.jpg" alt="Yamaha MT-15">
+        <div class="avail-chip"><span class="avail-dot"></span>Available</div>
+        <div class="cat-chip">200cc</div>
+      </div>
+      <div class="bike-body">
+        <div class="bike-name">Yamaha MT-15</div>
+        <div class="bike-specs">
+          <div class="spec-item"><div class="spec-label">Engine</div><div class="spec-val">155cc</div></div>
+          <div class="spec-item"><div class="spec-label">Mileage</div><div class="spec-val">43 kmpl</div></div>
+          <div class="spec-item"><div class="spec-label">Gearbox</div><div class="spec-val">Manual</div></div>
+          <div class="spec-item"><div class="spec-label">Type</div><div class="spec-val">Naked</div></div>
+        </div>
+        <div class="bike-price-row">
+          <span class="price-main">₹40</span>
+          <span class="price-unit">/hr</span>
+          <span class="price-day">• ₹920/day</span>
+        </div>
+        <a href="book.html?bike=Yamaha+MT-15&rate=40" class="btn btn-primary">Book Now →</a>
+      </div>
+    </div>
+
+    <!-- ════════════════════ PREMIUM BIKES ════════════════════ -->
+    <div class="category-heading" data-cat-head="premium"><span class="gold">Premium</span> Bikes</div>
+
+    <!-- Hero XF3R -->
+    <div class="bike-card" data-cat="premium">
+      <div class="bike-img">
+        <img src="img/hero_xf3r.jpg" alt="Hero XF3R">
+        <div class="avail-chip"><span class="avail-dot"></span>Available</div>
+        <div class="cat-chip premium-chip">Premium</div>
+      </div>
+      <div class="bike-body">
+        <div class="bike-name">Hero XF3R</div>
+        <div class="bike-specs">
+          <div class="spec-item"><div class="spec-label">Engine</div><div class="spec-val">210cc</div></div>
+          <div class="spec-item"><div class="spec-label">Mileage</div><div class="spec-val">30 kmpl</div></div>
+          <div class="spec-item"><div class="spec-label">Gearbox</div><div class="spec-val">Manual</div></div>
+          <div class="spec-item"><div class="spec-label">Type</div><div class="spec-val">Sports</div></div>
+        </div>
+        <div class="bike-price-row">
+          <span class="price-main">₹60</span>
+          <span class="price-unit">/hr</span>
+          <span class="price-day">• ₹1400/day</span>
+        </div>
+        <a href="book.html?bike=Hero+XF3R&rate=60" class="btn btn-primary">Book Now →</a>
+      </div>
+    </div>
+
+    <!-- Honda CBR300R -->
+    <div class="bike-card" data-cat="premium">
+      <div class="bike-img">
+        <img src="img/honda_cbr300r.jpg" alt="Honda CBR300R">
+        <div class="avail-chip"><span class="avail-dot"></span>Available</div>
+        <div class="cat-chip premium-chip">Premium</div>
+      </div>
+      <div class="bike-body">
+        <div class="bike-name">Honda CBR300R</div>
+        <div class="bike-specs">
+          <div class="spec-item"><div class="spec-label">Engine</div><div class="spec-val">286cc</div></div>
+          <div class="spec-item"><div class="spec-label">Mileage</div><div class="spec-val">28 kmpl</div></div>
+          <div class="spec-item"><div class="spec-label">Gearbox</div><div class="spec-val">Manual</div></div>
+          <div class="spec-item"><div class="spec-label">Type</div><div class="spec-val">Sport</div></div>
+        </div>
+        <div class="bike-price-row">
+          <span class="price-main">₹75</span>
+          <span class="price-unit">/hr</span>
+          <span class="price-day">• ₹1700/day</span>
+        </div>
+        <a href="book.html?bike=Honda+CBR300R&rate=75" class="btn btn-primary">Book Now →</a>
+      </div>
+    </div>
+
+    <!-- Benelli TNT 300 -->
+    <div class="bike-card" data-cat="premium">
+      <div class="bike-img">
+        <img src="img/benelli_tnt300.jpg" alt="Benelli TNT 300">
+        <div class="avail-chip"><span class="avail-dot"></span>Available</div>
+        <div class="cat-chip premium-chip">Premium</div>
+      </div>
+      <div class="bike-body">
+        <div class="bike-name">Benelli TNT 300</div>
+        <div class="bike-specs">
+          <div class="spec-item"><div class="spec-label">Engine</div><div class="spec-val">300cc</div></div>
+          <div class="spec-item"><div class="spec-label">Mileage</div><div class="spec-val">25 kmpl</div></div>
+          <div class="spec-item"><div class="spec-label">Gearbox</div><div class="spec-val">Manual</div></div>
+          <div class="spec-item"><div class="spec-label">Type</div><div class="spec-val">Naked</div></div>
+        </div>
+        <div class="bike-price-row">
+          <span class="price-main">₹80</span>
+          <span class="price-unit">/hr</span>
+          <span class="price-day">• ₹1800/day</span>
+        </div>
+        <a href="book.html?bike=Benelli+TNT+300&rate=80" class="btn btn-primary">Book Now →</a>
+      </div>
+    </div>
+
+  </div><!-- /.bikes-grid -->
+</div><!-- /.menu-wrap -->
+
+<footer>&copy; 2026 Biker Gallery &nbsp;•&nbsp; Proprietors: Nithish &amp; Padmasaran &nbsp;•&nbsp; Kanchipuram</footer>
+
+
+
+
+
+  <script src="js/menu.js"></script>
+</body>
+</html>

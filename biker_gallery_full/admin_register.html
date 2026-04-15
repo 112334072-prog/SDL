@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Admin Register — Biker Gallery</title>
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/login.css">
+<link rel="stylesheet" href="css/admin_register.css">
+</head>
+<body>
+<div class="page-bg"></div>
+
+<!-- Back to login page -->
+<a href="login.html" class="back-btn" title="Back to Login">←</a>
+
+<div class="register-wrap">
+  <div class="register-box">
+
+    <h2>⚙ Admin Register</h2>
+    <p class="subtitle">Biker Gallery — Admin Panel Access</p>
+
+    <!-- Server-side redirect error banner -->
+    <div class="err" id="errMsg"></div>
+
+    <form name="adminRegForm"
+          action="php/admin_register.php"
+          method="POST"
+          onsubmit="doAdminRegister(event)">
+
+      <!-- ══ ACCOUNT INFO ══ -->
+      <div class="sec-label">Account Info</div>
+
+      <div class="form-row">
+        <!-- Username -->
+        <div class="form-group">
+          <label>Username</label>
+          <input type="text" name="uname1" id="unameField"
+                 placeholder="admin_user"
+                 maxlength="25" autocomplete="off" required>
+          <div class="field-err" id="errUname"></div>
+        </div>
+
+        <!-- Full Name -->
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" name="full_name" id="fullNameField"
+                 placeholder="Full name"
+                 maxlength="35" autocomplete="off" required>
+          <div class="field-err" id="errFullName"></div>
+        </div>
+      </div>
+
+      <!-- ══ CONTACT INFO ══ -->
+      <div class="sec-label">Contact Info</div>
+
+      <!-- Email -->
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" name="email" id="emailField"
+               placeholder="admin@bikergallery.com"
+               maxlength="64" autocomplete="off" required>
+        <div class="field-err" id="errEmail"></div>
+      </div>
+
+      <!-- Phone -->
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input type="tel" name="phone" id="phoneField"
+               placeholder="9876543210"
+               maxlength="10" autocomplete="off" required>
+        <div class="field-err" id="errPhone"></div>
+      </div>
+
+      <!-- ══ SECURITY ══ -->
+      <div class="sec-label">Security</div>
+
+      <!-- Password -->
+      <div class="form-group">
+        <label>Password</label>
+        <div class="pw-wrap">
+          <input type="password" name="upswd1" id="pwField"
+                 placeholder="Enter password"
+                 maxlength="20" autocomplete="new-password" required>
+          <button class="pw-toggle" type="button"
+                  onclick="togglePw('pwField','pwBtn')" id="pwBtn">Show</button>
+        </div>
+        <div class="field-err" id="errPwd"></div>
+      </div>
+
+      <!-- Confirm Password — no Show button -->
+      <div class="form-group">
+        <label>Confirm Password</label>
+        <div class="pw-wrap">
+          <input type="password" name="upswd2" id="pw2Field"
+                 placeholder="Re-enter password"
+                 maxlength="20" autocomplete="new-password" required>
+        </div>
+        <div class="field-err" id="errPwd2"></div>
+      </div>
+
+      <button type="submit" class="btn-admin-register">
+        Create Admin Account →
+      </button>
+
+    </form>
+
+    <div class="login-footer">
+      Already registered? <a href="login.html">Login here</a>
+    </div>
+
+  </div>
+</div>
+
+<script src="js/admin_register.js"></script>
+</body>
+</html>

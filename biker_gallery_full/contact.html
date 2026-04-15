@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Contact — Biker Gallery</title>
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/contact.css">
+</head>
+<body>
+<div class="page-bg"></div>
+
+<nav>
+  <a class="nav-brand" href="home.html">BikerGallery</a>
+  <ul class="nav-links">
+    <li><a href="home.html">Home</a></li>
+    <li><a href="menu.html">Menu</a></li>
+    <li><a href="book.html">Book</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+    <li><a href="login.html" class="btn-nav">Logout</a></li>
+  </ul>
+</nav>
+
+<div class="contact-wrap">
+  <div class="contact-box">
+    <div class="contact-icon"></div>
+    <h2>Get In Touch</h2>
+    <p class="sub">We're here to help — reach out anytime</p>
+
+    <div class="info-cards">
+      <div class="info-card">
+        <div class="info-card-icon"></div>
+        <div>
+          <div class="info-card-label">Proprietor 1</div>
+          <div class="info-card-val">Nithish</div>
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-icon"></div>
+        <div>
+          <div class="info-card-label">Proprietor 2</div>
+          <div class="info-card-val">Padmasaran</div>
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-icon"></div>
+        <div>
+          <div class="info-card-label">Phone / WhatsApp</div>
+          <div class="info-card-val"><a href="tel:+919876543210">+91 98765 43210</a></div>
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-icon"></div>
+        <div>
+          <div class="info-card-label">Working Hours</div>
+          <div class="info-card-val">24/7 Available</div>
+        </div>
+      </div>
+      <div class="info-card full">
+        <div class="info-card-icon"></div>
+        <div>
+          <div class="info-card-label">Location</div>
+          <div class="info-card-val">Biker Gallery, Kanchipuram, Tamil Nadu, India</div>
+        </div>
+      </div>
+      <div class="info-card full">
+        <div class="info-card-icon">️</div>
+        <div>
+          <div class="info-card-label">Email</div>
+          <div class="info-card-val"><a href="/cdn-cgi/l/email-protection#16747f7d736471777a7a73646f56717b777f7a3875797b"><span class="__cf_email__" data-cfemail="56343f3d332431373a3a33242f16313b373f3a7835393b">[email&#160;protected]</span></a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-sep">Send Us a Message</div>
+
+    <div class="success-send" id="successSend"> Message sent! We'll get back to you soon.</div>
+
+    <div class="form-group">
+      <label>Your Name</label>
+      <input type="text" id="cName" placeholder="e.g. Ravi Kumar" maxlength="15">
+      <div class="field-err" id="errCName"></div>
+    </div>
+    <div class="form-group">
+      <label>Phone Number</label>
+      <input type="text" id="cPhone" placeholder="10-digit number" maxlength="10"
+             oninput="this.value=this.value.replace(/\D/g,'').slice(0,10)">
+      <div class="field-err" id="errCPhone"></div>
+    </div>
+    <div class="form-group">
+      <label>Message</label>
+      <textarea id="cMsg" class="msg-textarea" rows="4" placeholder="Your message here..." maxlength="800"></textarea>
+    </div>
+
+    <button class="btn btn-primary" onclick="sendMsg()">Send Message →</button>
+  </div>
+</div>
+
+<footer>&copy; 2026 Biker Gallery &nbsp;•&nbsp; Proprietors: Nithish &amp; Padmasaran &nbsp;•&nbsp; Kanchipuram</footer>
+
+<script src="js/contact.js"></script>
+</body>
+</html>
