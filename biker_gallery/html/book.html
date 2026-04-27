@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Book a Ride — Biker Gallery</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/book.css">
+
+</head>
+
+<body>
+  <div class="page-bg"></div>
+
+  <nav>
+    <a class="nav-brand" href="home.html">BikerGallery</a>
+    <ul class="nav-links">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="../php/menu.php">Menu</a></li>
+      <li><a href="book.html" class="active">Book</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="../php/logout.php" class="btn-nav">Logout</a></li>
+    </ul>
+  </nav>
+
+  <div class="book-wrap">
+    <div class="book-box">
+      <h2>Book Your Ride</h2>
+      <p class="sub">Fill in your details to confirm</p>
+
+      <div class="err" id="errMsg"></div>
+
+      <a href="../php/menu.php" class="bike-tag" title="Back to menu"
+        style="text-decoration:none;cursor:pointer;display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);margin-bottom:20px;transition:background .2s;">
+        <div class="bike-tag-icon"></div>
+        <div style="flex:1">
+          <div class="bike-tag-label"
+            style="font-size:10px;color:#64748b;text-transform:uppercase;letter-spacing:.05em;margin-bottom:2px;">
+            Selected Bike &nbsp;&#8592; change</div>
+          <div class="bike-tag-name" id="bikeTagName">Honda SP 125</div>
+        </div>
+        <div class="bike-tag-right">
+          <div class="bike-tag-avail" id="bikeTagAvail">Available</div>
+          <div class="bike-tag-rate" id="bikeTagRate">₹20/hr</div>
+        </div>
+      </a>
+
+      <div class="section-sep">Your Details</div>
+
+      <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" id="name" placeholder="e.g. Ravi Kumar" maxlength="35"
+          oninput="this.value=this.value.replace(/[^A-Za-z\s]/g,'')">
+        <div class="field-err" id="errName"></div>
+      </div>
+
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input type="text" id="phone" placeholder="e.g. 9876543210" maxlength="10"
+          oninput="this.value=this.value.replace(/\D/g,'').slice(0,10)">
+        <div class="field-err" id="errPhone"></div>
+      </div>
+
+      <div class="section-sep">Booking Details</div>
+
+      <div class="form-group">
+        <label>Pickup Date</label>
+        <input type="date" id="bookDate" onkeydown="return false;" onfocus="this.showPicker && this.showPicker()"
+          onchange="onDateChange()">
+        <p class="date-renewal-note">* Only applicable for a 2-day renewal</p>
+        <div class="field-err" id="errDate"></div>
+      </div>
+
+      <!-- ── Pickup Time Slots: 8 AM – 10 PM ── -->
+      <div class="slot-section">
+        <div class="slot-label">PICKUP TIME (8:00 AM – 10:00 PM)</div>
+        <div class="slot-grid" id="slotGrid">
+          <div class="slots-loading">Select a date to see available slots</div>
+        </div>
+        <div class="slot-legend">
+          <span><span class="dot dot-avail"></span> Available</span>
+          <span><span class="dot dot-block"></span> Booked</span>
+          <span><span class="dot dot-sel"></span> Your pick</span>
+        </div>
+        <div class="field-err" id="errSlot"></div>
+      </div>
+
+      <div class="summary">
+        <div class="sum-row"><span class="lbl">Date</span><span id="sumDate">—</span></div>
+        <div class="sum-row"><span class="lbl">Pickup Time</span><span id="sumTime">—</span></div>
+        <div class="sum-row deposit">
+          <span class="lbl">Refundable Deposit <span class="deposit-note">returned on bike return *T/C
+              Apply</span></span>
+          <span class="val-deposit" id="sumDeposit">₹2,500</span>
+        </div>
+        <div class="sum-row total"><span class="lbl">Total Payable</span><span class="val" id="sumTotal">₹2,500</span>
+        </div>
+      </div>
+
+      <button class="btn btn-primary" id="confirmBtn" onclick="goToPayment()">Proceed to Payment →</button>
+    </div>
+  </div>
+
+  <footer>&copy; 2026 Biker Gallery &nbsp;&bull;&nbsp; Proprietors: Nithish &amp; Padmasaran &nbsp;&bull;&nbsp;
+    Kanchipuram</footer>
+
+  <script src="../js/book.js"></script>
+</body>
+
+</html>
